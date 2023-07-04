@@ -8,13 +8,21 @@
   
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
 	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HM18Z25QQJ"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    function show_pub(){
+      document.getElementById('pub_table').style.display = 'inline';
+      document.getElementById('pub_button').style.opacity = 1;
+      document.getElementById('teaching_table').style.display = 'none';
+      document.getElementById('teach_button').style.opacity = 0.5;
+    }
 
-    gtag('config', 'G-HM18Z25QQJ');
+    function show_teach(){
+      document.getElementById('pub_table').style.display = 'none';
+      document.getElementById('pub_button').style.opacity = 0.5;
+      document.getElementById('teaching_table').style.display = 'inline';
+      document.getElementById('teach_button').style.opacity = 1;
+    }
+
   </script>
 </head>
 
@@ -46,16 +54,29 @@
             </td>
           </tr>
         </tbody></table>
+        <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:20px;width:100%;vertical-align:middle">
+              <heading>News</heading>
+              <ul>
+                <li>I am an organizer for the <a href="https://sites.google.com/view/uclavisionseminar">UCLA Vision Seminar</a>, a weekly forum for computer vision talks. Please <a href="mailto:rishiu@ucla.edu">email me</a> if you are interested in presenting. 
+              </ul>
+            </td>  
+          </tr>
+        </table> -->
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
-            <td style="padding:20px;width:50%;vertical-align:middle">
-              <heading>Publications</heading>
+            <td style="padding:20px;width:25%;vertical-align:middle;">
+              <heading id="pub_button" onclick="show_pub()">Publications</heading>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle;">
+              <heading id="teach_button" onclick="show_teach()" style="opacity:50%;">Teaching</heading>
             </td>
           </tr>
         </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <table id="pub_table" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 				
-    <tr onmouseout="bakedsdf_stop()" onmouseover="bakedsdf_start()">
+    <tr>
       <td style="padding:20px;width:25%;vertical-align:middle">
         <div class="one">
           <img src='images/org.png' width="160">
@@ -83,7 +104,7 @@
       </td>
     </tr>
 
-    <tr onmouseout="bakedsdf_stop()" onmouseover="bakedsdf_start()">
+    <tr>
       <td style="padding:20px;width:25%;vertical-align:middle">
         <div class="one">
           <img src='images/energy.png' width="160">
@@ -115,7 +136,7 @@
       </td>
     </tr>
 
-    <tr onmouseout="bakedsdf_stop()" onmouseover="bakedsdf_start()">
+    <tr>
       <td style="padding:20px;width:25%;vertical-align:middle">
         <div class="one">
           <!-- <div class="two" id='bakedsdf_image'><video  width=100% height=100% muted autoplay loop>
@@ -200,6 +221,45 @@
     </tr>	 -->
 					
         </tbody></table>
+        <table id="teaching_table" style="width:100%;border:0px;border-spacing:15px;border-collapse:separate;margin-right:auto;margin-left:auto;display:none;"><tbody style="width:100%">
+          <tr> 
+            <th style="text-align: center">Course</th>
+            <th style="text-align: center">School</th>
+            <th style="text-align: center">Semester/Quarter</th>
+            <th style="text-align: center">Title</th>
+          </tr>
+          <tr>
+            <td style="text-align: center">CS 184, Computer Graphics & Imaging</td>
+            <td style="text-align: center">UC Berkeley</td>
+            <td style="text-align: center">Spring 2022</td>
+            <td style="text-align: center">Head TA</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">CS 184, Computer Graphics & Imaging</td>
+            <td style="text-align: center">UC Berkeley</td>
+            <td style="text-align: center">Spring 2021</td>
+            <td style="text-align: center">Head TA</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">CS 170, Efficient Algorithms & Intractable Problems</td>
+            <td style="text-align: center">UC Berkeley</td>
+            <td style="text-align: center">Fall 2020</td>
+            <td style="text-align: center">Reader</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">CS 184, Computer Graphics & Imaging</td>
+            <td style="text-align: center">UC Berkeley</td>
+            <td style="text-align: center">Summer 2020</td>
+            <td style="text-align: center">TA</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">CS 184, Computer Graphics & Imaging</td>
+            <td style="text-align: center">UC Berkeley</td>
+            <td style="text-align: center">Spring 2020</td>
+            <td style="text-align: center">TA</td>
+          </tr>
+        </tbody>
+        </table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
             <td style="padding:0px">
