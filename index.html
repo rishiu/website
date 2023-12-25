@@ -77,9 +77,93 @@
 
       <table id="pub_table" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
         <tbody>
-          <tr style="width:100%;horizontal-align:middle">
-            <td colspan="2"><p>Representative/Recent papers are <span class="highlight">highlighted</span></p> </td>
+          <tr style="width:100%;horizontal-align:middle;">
+            <td style="padding-left: 20px" colspan="2"><p>Representative/Recent papers are <span class="highlight">highlighted</span></p> </td>
           </tr>
+
+          <tr onmouseover="sparsegs_start()" onmouseout="sparsegs_stop()">
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <div class="one">
+<!--               <div class="two" id='sparsegs_img'><video  width=100% height=100% muted autoplay loop>
+              <source src="videos/sparsegs.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+              </video></div> -->
+              <img src='images/weatherproof.png' width="160">
+            </div>
+            <!-- <script type="text/javascript">
+              function sparsegs_start() {
+                document.getElementById('sparsegs_img').style.opacity = "1";
+              }
+
+              function sparsegs_stop() {
+                document.getElementById('sparsegs_img').style.opacity = "0";
+              }
+              sparsegs_stop()
+            </script>-->
+          </td>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://visual.ee.ucla.edu/weatherproof.htm/"><papertitle>WeatherProof: A Paired-Dataset Approach to Semantic Segmentation in Adverse Weather</papertitle></a>
+            <br>
+            <a href="mailto:bgella118827@g.ucla.edu">Blake Gella*</a>,
+            <a href="https://scholar.google.com/citations?user=tBlMihEAAAAJ&hl=en">Howard Zhang*</a>, 
+            <strong>Rishi Upadhyay</strong>,
+            <a href="mailto:tiffanytchang@g.ucla.edu">Tiffany Chang</a>, 
+            <a href="mailto:mwaliman@g.ucla.edu">Matt Waliman</a>,
+            <a href="https://yhba-ucla.github.io/">Yunhao Ba</a>,
+            <a href="https://www.cs.yale.edu/homes/wong-alex/">Alex Wong</a>,
+            <a href="https://www.ee.ucla.edu/achuta-kadambi/">Achuta Kadambi</a>
+            <br>
+            <em>arXiv</em>, 2023
+            <br>
+            <a href="https://arxiv.org/abs/2312.09534">PDF</a> &nbsp/&nbsp
+            <a href="https://visual.ee.ucla.edu/weatherproof.htm/">project page</a>
+            <p></p>
+            <p>
+            We introduce the first paired semantic segmentation dataset in adverse conditions and show that techniques that leverage this paired nature can significantly improve performance.
+            </p>
+          </td>
+        </tr>
+
+          <tr onmouseover="sparsegs_start()" onmouseout="sparsegs_stop()">
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <div class="one">
+<!--               <div class="two" id='sparsegs_img'><video  width=100% height=100% muted autoplay loop>
+              <source src="videos/sparsegs.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+              </video></div> -->
+              <img src='images/sparsegs_ours.png' width="160">
+            </div>
+            <!-- <script type="text/javascript">
+              function sparsegs_start() {
+                document.getElementById('sparsegs_img').style.opacity = "1";
+              }
+
+              function sparsegs_stop() {
+                document.getElementById('sparsegs_img').style.opacity = "0";
+              }
+              sparsegs_stop()
+            </script>-->
+          </td>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://formycat.github.io/SparseGS-Real-Time-360-Sparse-View-Synthesis-using-Gaussian-Splatting/"><papertitle>SparseGS: Real-Time 360&deg Sparse View Synthesis using Gaussian Splatting</papertitle></a>
+            <br>
+            <a href="https://www.linkedin.com/in/haolin-xiong-927221176">Haolin Xiong*</a>,
+            <a href="https://www.linkedin.com/in/sairisheek/">Sairisheek Muttukuru*</a>, 
+            <strong>Rishi Upadhyay</strong>,
+            <a href="https://pradyumnachari.github.io/">Pradyumna Chari</a>, 
+            <a href="https://www.ee.ucla.edu/achuta-kadambi/">Achuta Kadambi</a>
+            <br>
+            <em>arXiv</em>, 2023
+            <br>
+            <a href="https://arxiv.org/abs/2312.00206">PDF</a> &nbsp/&nbsp
+            <a href="https://formycat.github.io/SparseGS-Real-Time-360-Sparse-View-Synthesis-using-Gaussian-Splatting/">project page</a>
+            <p></p>
+            <p>
+            We integrate 3D Gaussian Splatting with depth regularization and diffusion priors to enable 360&deg novel view synthesis from just 12 views.
+            </p>
+          </td>
+        </tr>
+
           <tr bgcolor="ffffd0">
           <td style="padding:20px;width:25%;vertical-align:middle">
             <div class="one">
@@ -98,7 +182,7 @@
             <a href="https://www.cs.yale.edu/homes/wong-alex/">Alex Wong</a>,
             <a href="https://www.ee.ucla.edu/achuta-kadambi/">Achuta Kadambi</a>
             <br>
-            <em>SIGGRAPH Asia</em>, 2023
+            <em>ACM TOG, SIGGRAPH Asia</em>, 2023
             <br>
             <a href="./papers/diffusion_perspective.pdf">PDF</a>
             <p></p>
@@ -171,22 +255,10 @@
         <tr>
           <td style="padding:20px;width:25%;vertical-align:middle">
             <div class="one">
-              <!-- <div class="two" id='bakedsdf_image'><video  width=100% height=100% muted autoplay loop>
-              <source src="images/bakedsdf_after.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-              </video></div> -->
+              
               <img src='images/asset_mapping.png' width="160">
             </div>
-            <!-- <script type="text/javascript">
-              function bakedsdf_start() {
-                document.getElementById('bakedsdf_image').style.opacity = "1";
-              }
-
-              function bakedsdf_stop() {
-                document.getElementById('bakedsdf_image').style.opacity = "0";
-              }
-              bakedsdf_stop()
-            </script> -->
+            
           </td>
           <td style="padding:20px;width:75%;vertical-align:middle">
             <papertitle>Indoor 3D Interactive Asset Detection Using a Smartphone</papertitle>
@@ -262,31 +334,37 @@
             <th style="text-align: center">Title</th>
           </tr>
           <tr>
-            <td style="text-align: center">CS 184, Computer Graphics & Imaging</td>
+            <td style="text-align: left">EE239AS, Computational Imaging</td>
+            <td style="text-align: center">UCLA</td>
+            <td style="text-align: center">Fall 2023</td>
+            <td style="text-align: center">TA</td>
+          </tr>
+          <tr>
+            <td style="text-align: left">CS 184, Computer Graphics & Imaging</td>
             <td style="text-align: center">UC Berkeley</td>
             <td style="text-align: center">Spring 2022</td>
             <td style="text-align: center">Head TA</td>
           </tr>
           <tr>
-            <td style="text-align: center">CS 184, Computer Graphics & Imaging</td>
+            <td style="text-align: left">CS 184, Computer Graphics & Imaging</td>
             <td style="text-align: center">UC Berkeley</td>
             <td style="text-align: center">Spring 2021</td>
             <td style="text-align: center">Head TA</td>
           </tr>
           <tr>
-            <td style="text-align: center">CS 170, Efficient Algorithms & Intractable Problems</td>
+            <td style="text-align: left">CS 170, Efficient Algorithms & Intractable Problems</td>
             <td style="text-align: center">UC Berkeley</td>
             <td style="text-align: center">Fall 2020</td>
             <td style="text-align: center">Reader</td>
           </tr>
           <tr>
-            <td style="text-align: center">CS 184, Computer Graphics & Imaging</td>
+            <td style="text-align: left">CS 184, Computer Graphics & Imaging</td>
             <td style="text-align: center">UC Berkeley</td>
             <td style="text-align: center">Summer 2020</td>
             <td style="text-align: center">TA</td>
           </tr>
           <tr>
-            <td style="text-align: center">CS 184, Computer Graphics & Imaging</td>
+            <td style="text-align: left">CS 184, Computer Graphics & Imaging</td>
             <td style="text-align: center">UC Berkeley</td>
             <td style="text-align: center">Spring 2020</td>
             <td style="text-align: center">TA</td>
