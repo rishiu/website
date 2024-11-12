@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Equation Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #b3d9ff; /* Darker blue background */
+        }
+        .title {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1a1a1a;
+        }
+        .slider-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .slider-label {
+            font-size: 1rem;
+            white-space: nowrap;
+        }
+        .slider-value {
+            font-size: 1rem;
+            min-width: 20px;
+        }
+        .streak-container {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            background-color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .container {
+            text-align: center;
+        }
+        .equation {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        input[type="number"] {
+            font-size: 1rem;
+            padding: 0.5rem;
+            width: 100px;
+            margin-right: 0.5rem;
+        }
+        button {
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: white;
+        }
+        button:hover {
+            background-color: #f0f0f0;
+        }
+        .feedback {
+            margin-top: 1rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        Multiplication Practice
+    </div>
+
+    <div class="slider-container">
+        <span class="slider-label"># of Digits:</span>
+        <input type="range" id="difficulty" min="1" max="4" value="1" step="1">
+        <span id="sliderValue" class="slider-value">1</span>
+    </div>
+    
+    <div class="container">
+        <div class="equation">
+            x = <span id="firstNumber">2</span> × <span id="secondNumber">5</span>
+        </div>
+        <label for="solution">x = </label>
+        <input type="number" id="solution" placeholder="Enter x">
+        <button type="button" onclick="checkAnswer()">Submit</button>
+        <div id="feedback" class="feedback"></div>
+    </div>
+
+    <div class="streak-container">
+        Streak: <span id="streakCount">0</span>
+    </div>
+
+    <script>
+        let correctAnswer = 10; // Will be updated when generating new numbers
+        let streak = 0;
+
+        function updateStreak(isCorrect) {
+            if (isCorrect) {
+                streak++;
+            } else {
+                streak = 0;
+            }
+            document.getElementById('streakCount').textContent = streak;
+        }
+
+        function generateRandomNumber(digits) {
+            const min = Math.pow(10, digits - 1);
+            const max = Math.pow(10, digits) - 1;
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function generateNewEquation() {
+            const digits = parseInt(document.getElementById('difficulty').value);
+            
+            // Generate two random numbers with the specified number of digits
+            const num1 = generateRandomNumber(digits);
+            const num2 = generateRandomNumber(digits);
+            
+            // Calculate the correct answer (product of the two numbers)
+            correctAnswer = num1 * num2;
+            
+            // Update the display
+            document.getElementById('firstNumber').textContent = num1;
+            document.getElementById('secondNumber').textContent = num2;
+            
+            // Clear previous input and feedback
+            document.getElementById('solution').value = '';
+            document.getElementById('feedback').textContent = '';
+
+            // Set focus to the input box
+            document.getElementById('solution').focus();
+        }
+        
+        // Update slider value display and generate new equation when slider changes
+        const slider = document.getElementById('difficulty');
+        const sliderValue = document.getElementById('sliderValue');
+        
+        slider.addEventListener('input', function() {
+            sliderValue.textContent = this.value;
+            generateNewEquation();
+            // Reset streak when difficulty changes
+            streak = 0;
+            updateStreak(false);
+        });
+
+        function checkAnswer() {
+            const input = document.getElementById('solution');
+            const feedbackDiv = document.getElementById('feedback');
+            
+            // Get the value and convert it to a number
+            const userAnswer = parseFloat(input.value);
+            
+            // Check if input is empty or not a number
+            if (input.value === '' || isNaN(userAnswer)) {
+                feedbackDiv.textContent = 'Please enter a valid number';
+                feedbackDiv.className = 'feedback incorrect';
+                updateStreak(false);
+                return;
+            }
+
+            // Check if the answer is correct
+            if (userAnswer === correctAnswer) {
+                feedbackDiv.textContent = 'Correct! Well done!';
+                feedbackDiv.className = 'feedback correct';
+                updateStreak(true);
+                
+                // Set a short timeout to show the "Correct!" message before generating new problem
+                setTimeout(() => {
+                    generateNewEquation();
+                }, 1000);
+            } else {
+                feedbackDiv.textContent = 'Incorrect. Try again!';
+                feedbackDiv.className = 'feedback incorrect';
+                updateStreak(false);
+            }
+        }
+
+        // Add event listener for Enter key
+        document.getElementById('solution').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                checkAnswer();
+            }
+        });
+
+        // Prevent non-numeric input (including 'e' and special characters)
+        document.getElementById('solution').addEventListener('keydown', function(event) {
+            // Allow: backspace, delete, tab, escape, enter, decimal point
+            if (event.key === 'Backspace' || 
+                event.key === 'Delete' || 
+                event.key === 'Tab' || 
+                event.key === 'Escape' || 
+                event.key === 'Enter' || 
+                event.key === '.' || 
+                event.key === '-' || 
+                (event.key >= '0' && event.key <= '9')) {
+                return true;
+            }
+            event.preventDefault();
+            return false;
+        });
+
+        // Generate initial equation
+        generateNewEquation();
+    </script>
+</body>
+</html>
