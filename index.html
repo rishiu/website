@@ -12,6 +12,17 @@
     function show_pub(){
       document.getElementById('pub_table').style.display = 'inline';
       document.getElementById('pub_button').style.opacity = 1;
+      document.getElementById('exp_table').style.display = 'none';
+      document.getElementById('exp_button').style.opacity = 0.5;
+      document.getElementById('teaching_table').style.display = 'none';
+      document.getElementById('teach_button').style.opacity = 0.5;
+    }
+
+    function show_exp(){
+      document.getElementById('pub_table').style.display = 'none';
+      document.getElementById('pub_button').style.opacity = 0.5;
+      document.getElementById('exp_table').style.display = 'inline';
+      document.getElementById('exp_button').style.opacity = 1;
       document.getElementById('teaching_table').style.display = 'none';
       document.getElementById('teach_button').style.opacity = 0.5;
     }
@@ -19,7 +30,9 @@
     function show_teach(){
       document.getElementById('pub_table').style.display = 'none';
       document.getElementById('pub_button').style.opacity = 0.5;
-      document.getElementById('teaching_table').style.display = 'inline';
+      document.getElementById('exp_table').style.display = 'none';
+      document.getElementById('exp_button').style.opacity = 0.5;
+      document.getElementById('teaching_table').style.display = 'block';
       document.getElementById('teach_button').style.opacity = 1;
     }
 
@@ -35,20 +48,25 @@
             <td style="padding:2.5%;width:63%;vertical-align:middle">
               <p style="text-align:center">
                 <name>Rishi Upadhyay</name>
-              </p>I am a 4th year PhD student at UCLA where I am advised by <a href="https://www.ee.ucla.edu/achuta-kadambi/">Prof. Achuta Kadambi</a>. I am also fortunate to collaborate with <a href="https://rickysavjani.com/#home">Prof. Ricky Savjani</a> and <a href="https://sites.google.com/view/li-groupucla/home?authuser=0">Prof. Yuzhang Li.</a></p>
+              </p>I am a 5th year PhD student at UCLA where I am advised by <a href="https://www.ee.ucla.edu/achuta-kadambi/">Prof. Achuta Kadambi</a>. I am also fortunate to collaborate with <a href="https://rickysavjani.com/#home">Prof. Ricky Savjani</a> and <a href="https://sites.google.com/view/li-groupucla/home?authuser=0">Prof. Yuzhang Li.</a></p>
               <p>My research interests are in studying and improving the physical understanding of vision diffusion models. I also work on applying frontier vision techniques and physics-informed neural networks to scientific applications in medicine and battery management.</p>
-              <p>I am honored to be awarded the <a href="https://www.sciencehub.ucla.edu/2025-amazon-fellows/">2025 Amazon Fellowship.</a></p>
+              <p>I am honored to be awarded the <a href="https://www.sciencehub.ucla.edu/2025-amazon-fellows/">2025 Amazon Fellowship</a> and the 2026 UCLA Jonsson Comprehensive Cancer Center Fellowship.</a></p>
               <p>I attended UC Berkeley for my undergrad where I was fortunate to work with <a href="https://www2.eecs.berkeley.edu/Faculty/Homepages/yirenng.html">Prof. Ren Ng</a> and <a href="https://www2.eecs.berkeley.edu/Faculty/Homepages/zakhor.html">Prof. Avideh Zakhor</a>.</p>
               <p>
               </p>
               <p style="text-align:center">
                 <a href="mailto:rishiu@ucla.edu">Email</a> &nbsp/&nbsp
                 <a href="https://scholar.google.com/citations?user=j5tGBdAAAAAJ&hl=en">Google Scholar</a> &nbsp/&nbsp
+                <a href="./CV.pdf">CV</a> &nbsp/&nbsp
                 <a href="https://github.com/rishiu">Github</a>
+              </p>
+              <p class="jobmarket">
+                <strong>I am on the job market for industry/postdoc research roles starting Spring 2027, focused on video-based world models, AI for Science, and world models for robotics.</strong><br>
+                Please <a href="mailto:rishiu@ucla.edu">reach out</a> if you have any relevant opportunities.
               </p>
             </td>
             <td style="padding:2.5%;width:40%;max-width:40%">
-              <a href="images/profile.jpg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/profile_circle.png" class="hoverZoomLink"></a>
+              <a href="images/new_profile.JPG"><img style="width:100%;max-width:100%" alt="profile photo" src="images/profile_circle.png" class="hoverZoomLink"></a>
             </td>
           </tr>
         </tbody></table>
@@ -67,7 +85,10 @@
             <td style="padding:20px;width:25%;vertical-align:middle;">
               <heading id="pub_button" onclick="show_pub()">Publications</heading>
             </td>
-            <td style="padding:20px;width:75%;vertical-align:middle;">
+            <td style="padding:20px;width:25%;vertical-align:middle;">
+              <heading id="exp_button" onclick="show_exp()" style="opacity:50%;">Experience</heading>
+            </td>
+            <td style="padding:20px;width:50%;vertical-align:middle;">
               <heading id="teach_button" onclick="show_teach()" style="opacity:50%;">Teaching</heading>
             </td>
           </tr>
@@ -79,31 +100,29 @@
             <td style="padding-left: 20px" colspan="2"><p>Representative/Recent papers are <span class="highlight">highlighted</span></p> </td>
           </tr>
 
-          <tr>
+          <tr bgcolor="ffffd0">
           <td style="padding:20px;width:25%;vertical-align:middle">
             <div class="one">
               <img src='images/wm_sq.png' width="160">
             </div>
           </td>
           <td style="padding:20px;width:75%;vertical-align:middle">
-            <papertitle>WorldBench:How Close are World Models to the Physical World?</papertitle>
+            <papertitle>WorldBench: Benchmarking Physical Understanding of World Models by Isolating Physics Concepts</papertitle>
             <br>
             <strong>Rishi Upadhyay</strong>,
-            <a href="https://scholar.google.com/citations?user=tBlMihEAAAAJ&hl=en">Howard Zhang</a>, 
-            <a>Zhirong Lu*</a>,
-            <a>Lakshman Sundaram*</a>,
-            <a>Ayush Agrawal*</a>,
-            <a>Yilin Wu*</a>,
+            <a href="https://scholar.google.com/citations?user=tBlMihEAAAAJ&hl=en">Howard Zhang</a>,
+            <a>Jim Solomon</a>,
+            <a>Ayush Agrawal</a>,
             <a href="https://yhba-ucla.github.io/">Yunhao Ba</a>,
             <a href="https://www.cs.yale.edu/homes/wong-alex/">Alex Wong</a>,
             <a href="https://celsodemelo.net/">Celso De Melo</a>,
             <a href="https://www.ee.ucla.edu/achuta-kadambi/">Achuta Kadambi</a>
             <br>
-            <em>Under Review</em>, 2025
+            <em>arXiv</em>, 2026
             <br>
-            <a href="https://world-bench.github.io/static/paper.pdf">PDF</a> &nbsp/&nbsp
+            <a href="https://arxiv.org/abs/2601.21282">PDF</a> &nbsp/&nbsp
             <a href="https://world-bench.github.io/">project page</a> &nbsp/&nbsp
-            <a href="https://huggingface.co/datasets/worldbenchmark/WorldBench">dataset</a>
+            <a href="https://huggingface.co/worldbenchmark">dataset</a>
             <p></p>
             <p>
             We evaluate how closely world models align with the physical world using a set of synthetic videos which test different physics concepts.
@@ -111,7 +130,87 @@
           </td>
         </tr>
 
-          <tr onmouseover="sparsegs_start()" onmouseout="sparsegs_stop()">
+        <tr bgcolor="ffffd0">
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <div class="one">
+              <img src='images/chembattery.png' width="160">
+            </div>
+          </td>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <papertitle>Battery Smart Sensing Via a Virtual Reference Electrode</papertitle>
+            <br>
+            <a>Jiayi Yu*</a>,
+            <a>Aki Takahashi*</a>,
+            <a>Min-Ho Kim*</a>,
+            <strong>Rishi Upadhyay*</strong>,
+            <a href="https://scholar.google.com/citations?user=tBlMihEAAAAJ&hl=en">Howard Zhang*</a>, 
+            <a>Tian-Yu Wang*</a>,
+            <a>Huayang Zhu</a>,
+            <a>Robert Kee</a>,
+            <a>Tyrone Vincent</a>,
+            <a>Bo Liu</a>,
+            <a>Xintong Yuan</a>,
+            <a>Thomas Hymel</a>,
+            <a>Kaiyan Liang</a>,
+            <a>Keyue Liang</a>,
+            <a>Haoyang Wu</a>,
+            <a>Dingyi Zhao</a>,
+            <a>Jung Tae Kim</a>,
+            <a href="https://www.ee.ucla.edu/achuta-kadambi/">Achuta Kadambi</a>,
+            <a href="https://sites.google.com/view/li-groupucla/home?authuser=0">Yuzhang Li</a>
+            <br>
+            <em>Nature Communications</em>, 2026
+            <br>
+            <a href="https://www.nature.com/articles/s41467-026-76535-y">PDF</a>
+            <p></p>
+            <p>
+            We train a machine learning model to estimate internal electrode potentials from standard battery operating data, preventing lithium plating and enabling safer fast-charging. 
+
+            Personally led the development of ML model from data to deployment.
+            </p>
+          </td>
+        </tr>
+
+        <tr onmouseover="sparsegs_start()" onmouseout="sparsegs_stop()">
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <div class="one">
+<!--               <div class="two" id='sparsegs_img'><video  width=100% height=100% muted autoplay loop>
+              <source src="videos/sparsegs.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+              </video></div> -->
+              <img src='images/moca3d.png' width="160">
+            </div>
+            <!-- <script type="text/javascript">
+              function sparsegs_start() {
+                document.getElementById('sparsegs_img').style.opacity = "1";
+              }
+
+              function sparsegs_stop() {
+                document.getElementById('sparsegs_img').style.opacity = "0";
+              }
+              sparsegs_stop()
+            </script>-->
+          </td>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <papertitle>MoCA3D: Monocular 3D Bounding Box Prediction in the Image Plane</papertitle>
+            <br>
+            <a href="https://scholar.google.com/citations?user=DrLK1UoAAAAJ&hl=en">Changwoo Jeon</a>,
+            <strong>Rishi Upadhyay</strong>,
+            <a href="https://www.ee.ucla.edu/achuta-kadambi/">Achuta Kadambi</a>,
+            <br>
+            <em>ECCV</em>, 2026
+            <br>
+            <a href="https://arxiv.org/abs/2603.19538">PDF</a> &nbsp/&nbsp
+            <a href="https://jeoncwcw.github.io/moca3d/">project page</a> &nbsp/&nbsp
+            <a href="https://github.com/jeoncwcw/MoCA3D">code</a>
+            <p></p>
+            <p>
+            Predicting pixel-aligned 3D bounding boxes from a single image without requiring camera intrinsics by using dense corner heatmaps and depth maps.
+            </p>
+          </td>
+        </tr>
+
+          <tr bgcolor="ffffd0" onmouseover="sparsegs_start()" onmouseout="sparsegs_stop()">
           <td style="padding:20px;width:25%;vertical-align:middle">
             <div class="one">
 <!--               <div class="two" id='sparsegs_img'><video  width=100% height=100% muted autoplay loop>
@@ -402,7 +501,85 @@
 					
       </tbody>
     </table>
-        <table id="teaching_table" style="width:100%;border:0px;border-spacing:15px;border-collapse:separate;margin-right:auto;margin-left:auto;display:none;"><tbody style="width:100%">
+        <table id="exp_table" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;display:none;">
+        <tbody>
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="explogo">
+                <img src="images/amd.png" alt="AMD logo">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <papertitle>Research Scientist Intern</papertitle>
+              <br>
+              <a href="https://www.amd.com/">AMD Research & Development</a>
+              <br>
+              <em>Jan 2026 - Aug. 2026</em>
+              <ul style="margin:8px 0 0 0; padding-left:18px;">
+                <li>Developed 3D native object-centric world model for multi-object dynamics prediction from a single image. Model disentangles simulation and rendering, allowing for fast and accurate simulation through a lightweight physics-conditioned transformer while maintaining high quality and diverse output videos through pre-trained diffusion models.</li>
+                <li>Demonstrated that model architecture allows it to accurately model physical laws and can provide benefits for downstream robotics tasks through both synthetic data generation and in-the-loop planning on PushT and LanguageTable.</li>
+                <li>Ported SoTA World Action Models (e.g. Cosmos 3, DreamZero, X-WAM) to AMD hardware to enable both inference and training.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="explogo">
+                <img src="images/meta.png" alt="Meta logo">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <papertitle>Research Scientist Intern</papertitle>
+              <br>
+              <a href="https://www.meta.com/">Meta Reality Labs</a>
+              <br>
+              <em>June 2024 - Sep. 2024</em>
+              <ul style="margin:8px 0 0 0; padding-left:18px;">
+                <li>Developed end-to-end differentiable pipeline that combined deep learning and geometric eye tracking algorithms by creating a module to back-project an estimated 2D pupil ellipse into a 3D pupil.</li>
+                <li>Demonstrated that the new pipeline was performant as a low-cost eye tracker and could be plugged into existing deep learning pipelines to improve performance across a variety of tasks.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="explogo">
+                <img src="images/apple.png" alt="Apple logo">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <papertitle>Software Engineer Intern</papertitle>
+              <br>
+              <a href="https://www.apple.com/">Apple</a>
+              <br>
+              <em>Summer 2021</em>
+              <p></p>
+              <p>
+              Built a custom object detection pipeline designed to run in under 5 seconds on ~40 megapixel images.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="explogo">
+                <img src="images/llnl_mark.png" alt="Lawrence Livermore National Laboratory logo">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <papertitle>Software Engineer Intern</papertitle>
+              <br>
+              <a href="https://www.llnl.gov/">Lawrence Livermore National Laboratory</a>
+              <br>
+              <em>Summer 2020</em>
+              <p></p>
+              <p>
+              Developed a tool to transfer vector fields such as force or pressure between 3D models with different shape, size, or resolution, including a fast 3D mesh parser.
+              </p>
+            </td>
+          </tr>
+        </tbody>
+        </table>
+        <div id="teaching_table" style="width:100%;margin-right:auto;margin-left:auto;display:none;">
+        <table style="width:100%;border:0px;border-spacing:15px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody style="width:100%">
           <tr> 
             <th style="text-align: center">Course</th>
             <th style="text-align: center">School</th>
@@ -465,6 +642,19 @@
           </tr>
         </tbody>
         </table>
+        <!--
+        <p class="subheading" style="padding: 10px 20px 0 20px;">Mentorship</p>
+        <ul style="margin: 8px 20px 20px 20px; padding-left: 18px;">
+          <li> Ethan Yang, UCLA — Now PhD student at Cornell</li>
+          <li> Blake Gella, UCLA — Now at ByteDance</li>
+          <li> Tiffany Chang, UCLA — Now at Amazon Annapurna Labs</li>
+          <li> Sairisheek Muttukuru, UCLA — Now at Meta Reality Labs</li>
+          <li> Haolin Xiong, UCLA — Now PhD student at USC</li>
+          <li> Changwoo Jeon, Yonsei University/UCLA</li>
+          <li> Ayush Agrawal, UCLA — Now at Planted Solar</li>
+        </ul>
+        -->
+        </div>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
             <td style="padding:0px">
